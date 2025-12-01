@@ -11,11 +11,12 @@ function Tours() {
     const fetchTours = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3001/tours");
+        const response = await axios.get("http://localhost:3000/tours");
         setTours(response.data);
         setError(null);
       } catch (err) {
         setError("Không thể tải danh sách tours");
+        console.error("Error:", err);
       } finally {
         setLoading(false);
       }
@@ -24,9 +25,15 @@ function Tours() {
     fetchTours();
   }, []);
 
-  if (loading) return <div className="text-center p-6">Đang tải...</div>;
+  if (loading) {
+    return (
+      <div className="text-center p-6 text-lg text-gray-600">
+        Đang tải...
+      </div>
+    );
+  }
 
-  if (error)
+  if (error) {
     return (
       <div className="text-center p-6">
         <p className="text-red-500">{error}</p>
@@ -38,10 +45,13 @@ function Tours() {
         </button>
       </div>
     );
+  }
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">✈️ Danh sách Tours</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        ✈️ Danh sách Tours
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tours.map((tour) => (

@@ -21,7 +21,7 @@ function App() {
             <Link to="./list" className="hover:text-gray-200">
               Danh sách
             </Link>
-            <Link to="#" className="hover:text-gray-200">
+            <Link to="./add" className="hover:text-gray-200">
               Thêm mới
             </Link>
           </div>

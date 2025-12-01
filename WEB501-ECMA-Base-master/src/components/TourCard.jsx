@@ -3,22 +3,35 @@ import { Link } from "react-router-dom";
 function TourCard({ tour }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-      <img src={tour.image} alt={tour.name} className="w-full h-48 object-cover" />
+      
+      {/* Ảnh tour */}
+      <img
+        src={tour.image}
+        alt={tour.name}
+        className="w-full h-48 object-cover"
+      />
 
       <div className="p-4">
+        
+        {/* Tên tour */}
         <h3 className="text-xl font-bold mb-2">{tour.name}</h3>
+
+        {/* Điểm đến */}
         <p className="text-gray-600">{tour.destination}</p>
 
+        {/* Giá */}
         <p className="text-blue-600 font-semibold mt-2">
           {tour.price.toLocaleString("vi-VN")} đ
         </p>
 
+        {/* Nút xem chi tiết */}
         <Link
           to={`/tours/${tour.id}`}
           className="inline-block mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Xem chi tiết
         </Link>
+
       </div>
     </div>
   );
