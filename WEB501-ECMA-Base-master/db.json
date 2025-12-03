@@ -13,22 +13,22 @@
     {
       "name": "Cát Bà",
       "destination": "Hạ Long",
-      "price": 1,
+      "price": 10009000,
       "id": 3,
-      "image": "https://picsum.photos/400/300?random=4",
+      "image": "https://picsum.photos/400/300?random=1",
       "duration": "4 ngày 3 đêm",
       "available": 21,
       "description": "Vui vv"
     },
     {
-      "name": "ABC",
-      "destination": "Hạ Long",
-      "duration": "6 ngày 5 đêm",
-      "price": 12000000,
-      "image": "https://picsum.photos/400/300?random=4",
-      "description": "vvv",
+      "name": "Hạ Long - Cát Bà 2N1D",
+      "destination": "ABC",
+      "duration": "3 ngày 2 đêm",
+      "price": 120000,
+      "image": "https://picsum.photos/400/300?random=5",
+      "description": ".......",
       "available": 20,
-      "id": 4
+      "id": 5
     }
   ],
   "destinations": [
@@ -49,6 +49,14 @@
       "name": "Đà Lạt",
       "icon": "🌺",
       "description": "Thành phố ngàn hoa"
+    }
+  ],
+  "users": [
+  
+    {
+      "email": "tienvinh1611@gmail.com",
+      "password": "$2a$10$NaP6Ty47Jubl5GRmi5qLFO/PZp1.3ngj6.zwcEOu8joba2WMQYr3q",
+      "id": 2
     }
   ]
 }
