@@ -7,31 +7,31 @@ function AddPage() {
 
   const [form, setForm] = useState({
     name: "",
-    destination: "",
-    duration: "",
-    price: "",
-    image: "",
-    description: "",
-    available: ""
+    class: "",
+    age: "",
+    score: "",
+    avatar: "",
+    note: "",
+    address: ""
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value || "" });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newTour = {
+    const newStudent = {
       ...form,
-      price: Number(form.price),
-      available: Number(form.available)
+      age: Number(form.age) || 0,
+      score: Number(form.score) || 0
     };
 
     try {
-      await axios.post("http://localhost:3000/tours", newTour);
-      alert("Thêm tour thành công!");
-      navigate("/List");
+      await axios.post("http://localhost:3000/students", newStudent);
+      alert("Thêm học sinh thành công!");
+      navigate("/");
     } catch (err) {
       console.error("Lỗi thêm:", err);
     }
@@ -39,106 +39,98 @@ function AddPage() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-6">Thêm Tour</h1>
+      <h1 className="text-2xl font-semibold mb-6">Thêm Học Sinh</h1>
 
       <form className="space-y-6" onSubmit={handleSubmit}>
-
-        {/* Tên tour */}
+        
+        {/* Tên */}
         <div>
-          <label className="block mb-1 font-medium">Tên tour</label>
+          <label className="block mb-1 font-medium">Tên học sinh</label>
           <input
             type="text"
             name="name"
-            value={form.name}
+            value={form.name || ""}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
             required
           />
         </div>
 
-        {/* Điểm đến */}
+        {/* Lớp */}
         <div>
-          <label className="block mb-1 font-medium">Điểm đến</label>
+          <label className="block mb-1 font-medium">Lớp</label>
           <input
             type="text"
-            name="destination"
-            value={form.destination}
+            name="class"
+            value={form.class || ""}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
             required
           />
         </div>
 
-        {/* Thời gian */}
+        {/* Tuổi */}
         <div>
-          <label className="block mb-1 font-medium">Thời gian (duration)</label>
-          <input
-            type="text"
-            name="duration"
-            value={form.duration}
-            onChange={handleChange}
-            placeholder="VD: 3 ngày 2 đêm"
-            className="w-full border border-gray-300 rounded px-3 py-2"
-          />
-        </div>
-
-        {/* Giá */}
-        <div>
-          <label className="block mb-1 font-medium">Giá</label>
+          <label className="block mb-1 font-medium">Tuổi</label>
           <input
             type="number"
-            name="price"
-            value={form.price}
+            name="age"
+            value={form.age || ""}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
-            required
           />
         </div>
 
-        {/* Số chỗ */}
+        {/* Điểm */}
         <div>
-          <label className="block mb-1 font-medium">Số chỗ (available)</label>
+          <label className="block mb-1 font-medium">Điểm trung bình</label>
           <input
             type="number"
-            name="available"
-            value={form.available}
+            name="score"
+            value={form.score || ""}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
-            placeholder="VD: 15"
           />
         </div>
 
-        {/* Ảnh */}
+        {/* Địa chỉ */}
         <div>
-          <label className="block mb-1 font-medium">Ảnh (URL)</label>
+          <label className="block mb-1 font-medium">Địa chỉ</label>
           <input
             type="text"
-            name="image"
-            value={form.image}
+            name="address"
+            value={form.address || ""}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+          />
+        </div>
+
+        {/* Avatar */}
+        <div>
+          <label className="block mb-1 font-medium">Ảnh đại diện</label>
+          <input
+            type="text"
+            name="avatar"
+            value={form.avatar || ""}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
             placeholder="https://..."
           />
         </div>
 
-        {/* Mô tả */}
+        {/* Ghi chú */}
         <div>
-          <label className="block mb-1 font-medium">Mô tả</label>
+          <label className="block mb-1 font-medium">Ghi chú</label>
           <textarea
-            name="description"
-            value={form.description}
+            name="note"
+            value={form.note || ""}
             onChange={handleChange}
-            rows={3}
+            rows={4}
             className="w-full border border-gray-300 rounded px-3 py-2"
-            placeholder="Nhập mô tả ngắn..."
-          />
+          ></textarea>
         </div>
 
-        {/* Nút thêm */}
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded"
-        >
+        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
           Thêm
         </button>
       </form>

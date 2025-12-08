@@ -1,62 +1,38 @@
 {
-  "tours": [
-    {
-      "id": 2,
-      "name": "Hạ Long - Cát Bà 2N1D",
-      "destination": "Hạ Long",
-      "duration": "2 ngày 1 đêm",
-      "price": 1800000,
-      "image": "https://picsum.photos/400/300?random=2",
-      "description": "Du thuyền vịnh Hạ Long - Kỳ quan thiên nhiên thế giới",
-      "available": 20
-    },
-    {
-      "name": "Cát Bà",
-      "destination": "Hạ Long",
-      "price": 10009000,
-      "id": 3,
-      "image": "https://picsum.photos/400/300?random=1",
-      "duration": "4 ngày 3 đêm",
-      "available": 21,
-      "description": "Vui vv"
-    },
-    {
-      "name": "Hạ Long - Cát Bà 2N1D",
-      "destination": "ABC",
-      "duration": "3 ngày 2 đêm",
-      "price": 120000,
-      "image": "https://picsum.photos/400/300?random=5",
-      "description": ".......",
-      "available": 20,
-      "id": 5
-    }
-  ],
-  "destinations": [
+  "students": [
     {
       "id": 1,
-      "name": "Sapa",
-      "icon": "🏔️",
-      "description": "Thiên đường núi rừng Tây Bắc"
+      "name": "Nguyễn Văn A",
+      "age": 16,
+      "class": "10A1",
+      "address": "Hà Nội",
+      "avatar": "https://picsum.photos/400/300?random=5",
+      "score": 45455
     },
     {
-      "id": 2,
-      "name": "Hạ Long",
-      "icon": "🌊",
-      "description": "Kỳ quan thiên nhiên thế giới"
+      "name": "Trần Thị B",
+      "class": "11A2",
+      "age": 17,
+      "score": 123123,
+      "avatar": "https://picsum.photos/400/300?random=4",
+      "note": "",
+      "address": "Đà Nẵng",
+      "id": 2
     },
     {
       "id": 3,
-      "name": "Đà Lạt",
-      "icon": "🌺",
-      "description": "Thành phố ngàn hoa"
+      "name": "Lê Minh C",
+      "age": 15,
+      "class": "9A3",
+      "address": "TP.HCM",
+      "avatar": "https://picsum.photos/400/300?random=1"
     }
   ],
   "users": [
-  
     {
-      "email": "tienvinh1611@gmail.com",
-      "password": "$2a$10$NaP6Ty47Jubl5GRmi5qLFO/PZp1.3ngj6.zwcEOu8joba2WMQYr3q",
-      "id": 2
+      "email": "admin@gmail.com",
+      "password": "123",
+      "id": 1
     }
   ]
 }
